@@ -7,7 +7,11 @@ export default  {
     './src/app/**/*.{js,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+      }
+    },
   },
   plugins: [],
 } satisfies Config

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Button } from "@/components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +15,11 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div
-      className={`${geistSans.className} ${geistMono.className} flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black`}
+      className="min-h-screen"
     >
-      <h2 className="text-4xl text-green-500">Title</h2>
+      <h2 className="text-4xl text-green-500">Title 2</h2>
+
+      <Button variant="outline">Button</Button>
     </div>
   );
 }
