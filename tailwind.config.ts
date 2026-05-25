@@ -46,27 +46,30 @@ export default {
         sm: "calc(0.5rem - 4px)",
       },
       fontFamily: {
-        sans: ["PT Sans Caption", 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        sans: ["PT Sans Caption", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       fontSize: {
         // Headings - PT Sans Caption
-        'heading-hg': ['40px', { lineHeight:'120%', fontWeight: '700' }],
-        'heading-xl': ['32px', { lineHeight: '120%', fontWeight: '700' }],
-        'heading-lg': ['28px', { lineHeight: '120%', fontWeight: '700' }],
-        'heading-md': ['24px', { lineHeight: '120%', fontWeight: '700' }],
-        'heading-sm': ['20px', { lineHeight: '120%', fontWeight: '700' }],
-        'heading-xs': ['16px', { lineHeight: '120%', fontWeight: '700' }],
+        "heading-hg": ["40px", { lineHeight: "120%", fontWeight: "700" }],
+        "heading-xl": ["32px", { lineHeight: "120%", fontWeight: "700" }],
+        "heading-lg": ["28px", { lineHeight: "120%", fontWeight: "700" }],
+        "heading-md": ["24px", { lineHeight: "120%", fontWeight: "700" }],
+        "heading-sm": ["20px", { lineHeight: "120%", fontWeight: "700" }],
+        "heading-xs": ["16px", { lineHeight: "120%", fontWeight: "700" }],
 
         // Body - Inter
-        'body-md': ['16px', { lineHeight: '150%', fontWeight: '400' }],
-        'body-sm': ['14px', { lineHeight: '150%', fontWeight: '400' }],
-        'body-xs': ['12px', { lineHeight: '150%', fontWeight: '400' }],
+        "body-md": ["16px", { lineHeight: "150%", fontWeight: "400" }],
+        "body-sm": ["14px", { lineHeight: "150%", fontWeight: "400" }],
+        "body-xs": ["12px", { lineHeight: "150%", fontWeight: "400" }],
+
+        // Body Tag
+        "body-tag": ["12px", { lineHeight: "100%", fontWeight: "400" }],
 
         // Action - Inter
-        'action-md': ['16px', { lineHeight: '150%', fontWeight: '500' }],
-        'action-sm': ['14px', { lineHeight: '150%', fontWeight: '500' }],
-      }
+        "action-md": ["16px", { lineHeight: "150%", fontWeight: "500" }],
+        "action-sm": ["14px", { lineHeight: "150%", fontWeight: "500" }],
+      },
     },
   },
   plugins: [],
