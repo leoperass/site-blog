@@ -1,11 +1,17 @@
-import { ArrowRight } from "lucide-react"
-import { Button } from "../ui/button"
-import Image from "next/image"
-import Link from "next/link"
+import { ArrowRight } from "lucide-react";
+import { Button } from "../ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { PT_Sans_Caption } from "next/font/google";
+
+const ptSansCaption = PT_Sans_Caption({
+  subsets: ['latin'],
+  weight: '700'
+})
 
 export const FeatureSection = () => {
   return (
-    <section className="container grid gap-6 md:grid-cols-2 pb-8 pt-8 md:py-10">
+    <section className={`${ptSansCaption.className} container grid gap-6 md:grid-cols-2 pb-8 pt-8 md:py-10`}>
       <div className="flex flex-col bg-gray-500 rounded-lg p-6 md:p-12 gap-4">
         <span className="text-body-tag text-blue-200 uppercase bg-blue-400 px-2 py-1 w-fit rounded-sm">simples</span>
         <h2 className="text-heading-lg text-gray-100">Crie um catálogo de produtos online em poucos minutos</h2>
