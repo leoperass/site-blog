@@ -2,31 +2,25 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { PT_Sans_Caption } from "next/font/google";
-
-const ptSansCaption = PT_Sans_Caption({
-  subsets: ['latin'],
-  weight: '700'
-})
 
 export const FeatureSection = () => {
   return (
-    <section className={`${ptSansCaption.className} container grid gap-6 md:grid-cols-2 pb-8 pt-8 md:py-10`}>
+    <section className="container grid gap-6 md:grid-cols-2 pb-8 pt-8 md:py-10">
       <div className="flex flex-col bg-gray-500 rounded-lg p-6 md:p-12 gap-4">
         <span className="text-body-tag text-blue-200 uppercase bg-blue-400 px-2 py-1 w-fit rounded-sm">simples</span>
-        <h2 className="text-heading-lg text-gray-100">Crie um catálogo de produtos online em poucos minutos</h2>
+        <h2 className="font-sans text-heading-lg text-gray-100">Crie um catálogo de produtos online em poucos minutos</h2>
       </div>
 
       <div className="flex flex-col bg-gray-500 rounded-lg p-6 md:p-12 gap-4">
         <span className="text-body-tag text-blue-200 uppercase bg-blue-400 px-2 py-1 w-fit rounded-sm">prático</span>
-        <h2 className="text-heading-lg text-gray-100">Venda para seu público através de uma plataforma única</h2>
+        <h2 className="font-sans text-heading-lg text-gray-100">Venda para seu público através de uma plataforma única</h2>
       </div>
 
       <div className="col-span-full flex flex-col gap-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-4 bg-gray-500 rounded-lg p-6 md:p-12">
           <div className="flex flex-col gap-4">
             <span className="text-body-tag text-blue-200 uppercase bg-blue-400 px-2 py-1 w-fit rounded-sm">personalizável</span>
-            <h2 className="text-heading-lg text-gray-100">Tenha uma loja online personalizada com a cara da sua marca</h2>
+            <h2 className="font-sans text-heading-lg text-gray-100">Tenha uma loja online personalizada com a cara da sua marca</h2>
             <Button asChild className="w-fit rounded-full hidden mt-4 md:mt-auto md:flex">
               <Link
                 href='/criar-loja'>
