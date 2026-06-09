@@ -17,12 +17,12 @@ export const HeroSection = () => {
                             <div>
                                 <div className="flex gap-2 items-center">
                                     <Clock className="text-cyan-100 w-5 h-5" />
-                                    <span className="text-gray-200">Crie o seu site em menos de 5 minutos</span>
+                                    <span className="text-body-md text-gray-200">Crie o seu site em menos de 5 minutos</span>
                                 </div>
 
                                 <div className="flex gap-2 items-center">
                                     <Store className="text-cyan-100 w-5 h-5" />
-                                    <span className="text-gray-200">Acompanhe e otimize seu negócio online</span>
+                                    <span className="text-body-md text-gray-200">Acompanhe e otimize seu negócio online</span>
                                 </div>
                             </div>
 
