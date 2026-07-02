@@ -1,11 +1,11 @@
 ---
-title: Transformando seu negócio em uma loja virtual
-description: Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você.
+title: 5 motivos para escolher o Site.Set
+description: O Site.Set oferece tudo o que você precisa para criar uma loja online eficiente e personalizada. Desde a integração com sistemas de pagamento até a criação de páginas de vendas, veja por que milhares de empreendedores escolhem nossa plataforma.
 date: 2024-12-20 10:20:00
-image: /assets/first-post.png
+image: /assets/second-post.png
 author:
-  name: Aspen Dokidis
-  avatar: /avatar-01.svg
+  name: Dulce Westervelt
+  avatar: avatar-03.svg
 ---
 
 Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos.
