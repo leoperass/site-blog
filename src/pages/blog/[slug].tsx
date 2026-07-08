@@ -3,11 +3,7 @@ import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { AvatarContainer } from "@/components/avatar/avatar-container";
-import { AvatarContent } from "@/components/avatar/avatar-content";
-import { AvatarDescription } from "@/components/avatar/avatar-description";
-import { AvatarTitle } from "@/components/avatar/avatar-title";
-import { AvatarImage } from "@/components/avatar/avatar-image";
+import { Avatar } from "@/components/avatar";
 import { MarkDown } from "@/components/markdown";
 
 export default function PostPage() {
@@ -58,19 +54,18 @@ export default function PostPage() {
                 {post?.title}
               </h1>
 
-              <AvatarContainer>
-                <AvatarImage src={post.author.avatar} alt={post.title} />
-                <AvatarContent>
-                  <AvatarTitle>
+              <Avatar.Container>
+                <Avatar.Image src={post.author.avatar} alt={post.title} size="sm" />
+                <Avatar.Content>
+                  <Avatar.Title>
                     {post?.author.name}
-                  </AvatarTitle>
-                  <AvatarDescription>
+                  </Avatar.Title>
+                  <Avatar.Description>
                     Publicado em {" "}
                     <time dateTime={post?.date}>{publishedDate}</time>
-                  </AvatarDescription>
-
-                </AvatarContent>
-              </AvatarContainer>
+                  </Avatar.Description>
+                </Avatar.Content>
+              </Avatar.Container>
             </header>
 
             <div className="prose prose-invert max-w-none px-4 mt-12 md:px-6 lg:px-12">
