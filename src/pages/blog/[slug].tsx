@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Avatar } from "@/components/avatar";
 import { MarkDown } from "@/components/markdown";
+import { Button } from "@/components/ui/button";
+import { useShare } from "@/hooks";
 
 export default function PostPage() {
   const router = useRouter();
@@ -18,11 +20,18 @@ export default function PostPage() {
     (post) => post.slug.toLowerCase() === slug.toLowerCase()
   )!;
 
-  const publishedDate = new Date(post?.date).toLocaleDateString('pt-br')
+  const publishedDate = new Date(post?.date).toLocaleDateString('pt-br');
+  const postUrl = `https://site.set/blog/${slug}`;
+
+  const { shareButtons } = useShare({
+    url: postUrl,
+    title: post.title,
+    text: post.description
+  });
 
 
   return (
-    <main className="mt-32 text-gray-100">
+    <main className="pt-32 pb-16 text-gray-100 bg-gray-700">
       <div className="container space-y-12 px-4 md:px-8">
         <Breadcrumb>
           <BreadcrumbList>
@@ -72,6 +81,26 @@ export default function PostPage() {
               <MarkDown content={post.body.raw} />
             </div>
           </article>
+
+          <aside>
+            <div className="space-y-6 bg-gray-700 rounded-lg">
+              <h2 className="text-heading-xs text-gray-100">Compartilhar</h2>
+            
+              <div className="space-y-3">
+                {shareButtons.map((provider) => (
+                  <Button
+                    key={provider.provider}
+                    onClick={() => provider.action()}
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                  > 
+                    {provider.icon}
+                    {provider.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
