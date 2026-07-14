@@ -31,8 +31,8 @@ export const PostPage = () => {
 
 
   return (
-    <main className="pt-32 pb-16 text-gray-100 bg-gray-700">
-      <div className="container space-y-12 px-4 md:px-8">
+    <main className="py-20 text-gray-100 bg-gray-800">
+      <div className="container space-y-8 px-4 md:px-8">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -84,18 +84,20 @@ export const PostPage = () => {
 
           <aside>
             <div className="space-y-6 bg-gray-700 rounded-lg">
-              <h2 className="text-heading-xs text-gray-100">Compartilhar</h2>
+              <h2 className="hidden md:block text-heading-xs text-gray-100">Compartilhar</h2>
 
-              <div className="space-y-3">
+              <div className="flex justify-between md:flex-col gap-2">
                 {shareButtons.map((provider) => (
                   <Button
                     key={provider.provider}
                     onClick={() => provider.action()}
                     variant="outline"
-                    className="w-full justify-start gap-2"
+                    className="w-fit md:w-full justify-start gap-2"
                   >
                     {provider.icon}
-                    {provider.name}
+                    <span className="hidden md:block">
+                      {provider.name}
+                    </span>
                   </Button>
                 ))}
               </div>
