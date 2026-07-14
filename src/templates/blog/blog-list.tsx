@@ -57,7 +57,7 @@ export function BlogList() {
             {!hasPosts && (
                 <div className="container px-8">
                     <div className="flex flex-col items-center justify-center gap-4 border-dashed border-2 border-gray-300 p-8 md:p-12 rounded-lg">
-                        <Inbox className="h-12 w-12 text-cyan-100"/>
+                        <Inbox className="h-12 w-12 text-cyan-100" />
                         <p className="text-gray-100">Nenhum post encontrado</p>
                     </div>
                 </div>
