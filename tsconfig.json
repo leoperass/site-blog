@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "target": "ES2017",
     "lib": [
@@ -23,8 +22,15 @@
       "@/*": [
         "./src/*"
       ],
-      "contentlayer/generated": ["./.contentlayer/generated"],
-    }
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",

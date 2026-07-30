@@ -1,27 +1,19 @@
-import { useRouter } from "next/router"
-import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
+import { Post } from "contentlayer/generated";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Avatar } from "@/components/avatar";
 import { MarkDown } from "@/components/markdown";
 import { Button } from "@/components/ui/button";
 import { useShare } from "@/hooks";
 
-export const PostPage = () => {
-  const router = useRouter();
-  const slug = router.query.slug as string;
+export type PostPageProps = {
+  post: Post;
+}
 
-  if (!slug) {
-    return null;
-  }
-
-  const post = allPosts.find(
-    (post) => post.slug.toLowerCase() === slug.toLowerCase()
-  )!;
-
+export const PostPage = ({ post }: PostPageProps) => {
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-br');
-  const postUrl = `https://site.set/blog/${slug}`;
+  const postUrl = `https://site.set/blog/${post.slug}`;
 
   const { shareButtons } = useShare({
     url: postUrl,
@@ -47,7 +39,7 @@ export const PostPage = () => {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 lg-gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 lg:gap-12">
           <article className="bg-gray-600 rounded-lg overflow-hidden border-gray-400 border-[1px]">
             <figure className="relative aspect-[16/10] w-full overflow-hidden rounded-lg">
               <Image
@@ -58,7 +50,7 @@ export const PostPage = () => {
               />
             </figure>
 
-            <header className="p-4 md:p-6 lg:p-12 pb-0 mt-8 md:mt-12">
+            <header className="p-4 md:p-6 lg:p-12 pb-0 mt-6 md:mt-8">
               <h1 className="mb-8 text-balance text-heading-lg md:text-heading-xl">
                 {post?.title}
               </h1>
@@ -77,13 +69,13 @@ export const PostPage = () => {
               </Avatar.Container>
             </header>
 
-            <div className="prose prose-invert max-w-none px-4 mt-12 md:px-6 lg:px-12">
+            <div className="prose prose-invert max-w-none mt-8 px-4 md:px-6 lg:px-12">
               <MarkDown content={post.body.raw} />
             </div>
           </article>
 
           <aside>
-            <div className="space-y-6 bg-gray-700 rounded-lg">
+            <div className="space-y-6 bg-gray-800 rounded-lg">
               <h2 className="hidden md:block text-heading-xs text-gray-100">Compartilhar</h2>
 
               <div className="flex justify-between md:flex-col gap-2">
