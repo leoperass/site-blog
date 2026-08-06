@@ -4,8 +4,7 @@ import { Post } from "contentlayer/generated";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Avatar } from "@/components/avatar";
 import { MarkDown } from "@/components/markdown";
-import { Button } from "@/components/ui/button";
-import { useShare } from "@/hooks";
+import { PostShare } from "./components/post-share";
 
 export type PostPageProps = {
   post: Post;
@@ -14,13 +13,6 @@ export type PostPageProps = {
 export const PostPage = ({ post }: PostPageProps) => {
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-br');
   const postUrl = `https://site.set/blog/${post.slug}`;
-
-  const { shareButtons } = useShare({
-    url: postUrl,
-    title: post.title,
-    text: post.description
-  });
-
 
   return (
     <main className="py-20 text-gray-100 bg-gray-800">
@@ -74,27 +66,11 @@ export const PostPage = ({ post }: PostPageProps) => {
             </div>
           </article>
 
-          <aside>
-            <div className="space-y-6 bg-gray-800 rounded-lg">
-              <h2 className="hidden md:block text-heading-xs text-gray-100">Compartilhar</h2>
-
-              <div className="flex justify-between md:flex-col gap-2">
-                {shareButtons.map((provider) => (
-                  <Button
-                    key={provider.provider}
-                    onClick={() => provider.action()}
-                    variant="outline"
-                    className="w-fit md:w-full justify-start gap-2"
-                  >
-                    {provider.icon}
-                    <span className="hidden md:block">
-                      {provider.name}
-                    </span>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </aside>
+          <PostShare
+            url={postUrl}
+            title={post.title}
+            description={post.description}
+          />
         </div>
       </div>
     </main>
