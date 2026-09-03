@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Site.Set',
     description: 'Venda seus produtos como afiliado em um único lugar',
-    url: 'https://site-blog-sepia-alpha.vercel.app/og-image.jpg',
+    url: 'https://site-blog-sepia-alpha.vercel.app/',
     siteName: 'Site.Set',
     locale: 'pt_BR',
     type: 'website',
